@@ -1,15 +1,16 @@
 package com.tl.learn.juc.jiagou.sync;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Sync01 implements Runnable{
-    static int i = 0;
+    static AtomicInteger i = new AtomicInteger(0);
     ReentrantLock lock = new ReentrantLock();
     private  void add(){
-        synchronized (this) {
+        {
             for (int j = 0; j < 100000; j++) {
-                i++;
+                i.getAndIncrement();
             }
         }
     }
