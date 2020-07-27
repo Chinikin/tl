@@ -15,7 +15,7 @@ public class SimpleServer {
         ServiceConfig serviceConfig = new ServiceConfig();
         serviceConfig.setInterface(UserService.class);
         serviceConfig.setProtocol(new ProtocolConfig("dubbo",port));
-        serviceConfig.setRegistry(new RegistryConfig("multicast://224.1.2.3:11111"));
+        serviceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
         serviceConfig.setApplication(new ApplicationConfig("simple-app"));
         UserServiceImpl ref = new UserServiceImpl();
         serviceConfig.setRef(ref);

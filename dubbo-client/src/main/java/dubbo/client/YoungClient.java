@@ -16,7 +16,7 @@ public class YoungClient {
     public UserService buildRemoteService(String remoteUrl){
         ReferenceConfig<UserService> referenceConfig = new ReferenceConfig();
         referenceConfig.setInterface(UserService.class);
-        referenceConfig.setRegistry(new RegistryConfig("multicast://224.1.2.3:11111"));
+        referenceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
         referenceConfig.setUrl(remoteUrl);
         referenceConfig.setApplication(new ApplicationConfig("young-app"));
         return referenceConfig.get();
